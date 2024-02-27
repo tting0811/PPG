@@ -17,8 +17,12 @@ def getResult():
 @app.route('/predict', methods=['POST'])
 def postInput():
     # 取得前端傳來的數值
-    insertValues = request.get_json()
-    x=insertValues['x']
+    data = request.get_json()
+    CTR = data['CTR']
+    KTE_kurt = data['KTE_kurt(IR)']
+    SE_mean = data['SE_mean']
+    KTE_skew = data['KTE_skew']
+    x = [CTR, KTE_kurt, SE_mean, KTE_skew]
     input = np.array([[x]])
     # 預測
     result = model.predict(input)
