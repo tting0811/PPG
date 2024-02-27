@@ -18,12 +18,14 @@ def getResult():
 def postInput():
     # 取得前端傳來的數值
     data = request.get_json()
-    CTR = data('CTR')
-    KTE_kurt = data('KTE_kurt(IR)')
-    SE_mean = data('SE_mean')
-    KTE_skew = data('KTE_skew(IR)')
+    CTR = data['CTR']
+    KTE_kurt = data['KTE_kurt(IR)']
+    SE_mean = data['SE_mean']
+    KTE_skew = data['KTE_skew(IR)']
     x = [CTR, KTE_kurt, SE_mean, KTE_skew]
+    print(x)
     input = np.array([x])
+    print(input)
     # 預測
     result = model.predict(input)
 
