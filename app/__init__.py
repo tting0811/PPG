@@ -21,7 +21,7 @@ def postInput():
     CTR = data['CTR']
     KTE_kurt = data['KTE_kurt(IR)']
     SE_mean = data['SE_mean']
-    KTE_skew = data['KTE_skew']
+    KTE_skew = data['KTE_skew(IR)']
     x = [CTR, KTE_kurt, SE_mean, KTE_skew]
     input = np.array([[x]])
     # 預測
